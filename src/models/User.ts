@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { Profile } from "./Profile";
 
 const userSchema = new mongoose.Schema({
     nom: {
@@ -12,6 +13,10 @@ const userSchema = new mongoose.Schema({
     age: {
         type: Number,
         required: true
+    },
+    profile: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: Profile
     }
 })
 
